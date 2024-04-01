@@ -10,4 +10,9 @@ public class TagController {
     public String helloWorld() {
         return "Hello, World!";
     }
+
+    @RequestMapping("/goodbye")
+    public String goodbye() {
+        return "Goodbye, World!";
+    }
 }
