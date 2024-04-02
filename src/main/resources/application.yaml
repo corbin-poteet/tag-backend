@@ -1,4 +1,9 @@
 spring:
+# Application Settings
+  application:
+    name: tag-backend
+
+# Database Settings
   datasource:
     url: jdbc:mysql://localhost:3306/tag?useSSL=false
     username: root
