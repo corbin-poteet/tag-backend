@@ -1,10 +1,14 @@
 package com.thrive.tagbackend.service.impl;
 
+import com.thrive.tagbackend.TagUtils;
 import com.thrive.tagbackend.repository.TagRepository;
 import com.thrive.tagbackend.service.TagService;
 import com.thrive.tagbackend.model.Tag;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public class TagServiceImpl implements TagService {
     TagRepository tagRepository;
 
@@ -14,37 +18,54 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public String createTag(Tag tag) {
-        return null;
+        if (tagRepository.existsById(tag.getGroupAndElement())) {
+            return "Tag already exists";
+        }
+
+        tagRepository.save(tag);
+        return "Success";
     }
 
     @Override
     public String updateTag(Tag tag) {
-        return null;
+        if (!tagRepository.existsById(tag.getGroupAndElement())) {
+            return "Tag does not exist";
+        }
+
+        tagRepository.save(tag);
+        return "Success";
     }
 
     @Override
     public String deleteTag(String groupAndElement) {
-        return null;
+        if (!tagRepository.existsById(groupAndElement)) {
+            return "Tag does not exist";
+        }
+
+        tagRepository.deleteById(groupAndElement);
+        return "Success";
     }
 
     @Override
     public String deleteTag(int group, int element) {
-        return null;
+        String groupAndElement = TagUtils.getGroupAndElement(group, element);
+        return deleteTag(groupAndElement);
     }
 
     @Override
     public Tag getTag(String groupAndElement) {
-        return null;
+        return tagRepository.findById(groupAndElement).orElse(null);
     }
 
     @Override
     public Tag getTag(int group, int element) {
-        return null;
+        String groupAndElement = TagUtils.getGroupAndElement(group, element);
+        return getTag(groupAndElement);
     }
 
     @Override
     public List<Tag> getAllTags() {
-        return null;
+        return tagRepository.findAll();
     }
 
 }
