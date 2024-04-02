@@ -1,7 +1,14 @@
 package com.thrive.tagbackend.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tag_info")
 public class Tag {
-    private String groupAndElement;
+    @Id
+    private String groupAndElement; // group + ", " + element, both in hex
     private String tagDescription;
     private String valueRepresentation;
     private String tagLength;
