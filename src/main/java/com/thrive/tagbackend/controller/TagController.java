@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/tag")
-public class TagAPIService {
+public class TagController {
     private Tag tag;
 
     @GetMapping("/{group}/{element}")
