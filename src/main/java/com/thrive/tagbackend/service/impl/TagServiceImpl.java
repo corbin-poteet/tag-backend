@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class TagServiceImpl implements TagService {
@@ -17,12 +18,19 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public String createTag(Tag tag) {
-        if (tagRepository == null) {
-            return "Tag repository not initialized";
+        // Set groupAndElement if not set
+        if (tag.getGroupAndElement() == null) {
+            tag.setGroupAndElement(TagUtils.getGroupAndElement(tag.getGroup(), tag.getElement()));
         }
 
+        // Check if tag already exists
         if (tagRepository.existsById(tag.getGroupAndElement())) {
             return "Tag already exists";
+        }
+
+        // Check if groupAndElement matches group and element
+        if (!Objects.equals(tag.getGroupAndElement(), TagUtils.getGroupAndElement(tag.getGroup(), tag.getElement()))) {
+            return "Group and element do not match";
         }
 
         tagRepository.save(tag);
@@ -33,6 +41,11 @@ public class TagServiceImpl implements TagService {
     public String updateTag(Tag tag) {
         if (!tagRepository.existsById(tag.getGroupAndElement())) {
             return "Tag does not exist";
+        }
+
+        // Check if groupAndElement matches group and element
+        if (!Objects.equals(tag.getGroupAndElement(), TagUtils.getGroupAndElement(tag.getGroup(), tag.getElement()))) {
+            return "Group and element do not match";
         }
 
         tagRepository.save(tag);
