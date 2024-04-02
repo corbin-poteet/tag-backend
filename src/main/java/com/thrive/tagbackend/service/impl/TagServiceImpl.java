@@ -4,20 +4,23 @@ import com.thrive.tagbackend.TagUtils;
 import com.thrive.tagbackend.repository.TagRepository;
 import com.thrive.tagbackend.service.TagService;
 import com.thrive.tagbackend.model.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class TagServiceImpl implements TagService {
-    TagRepository tagRepository;
+    @Autowired(required = false)
+    private TagRepository tagRepository;
 
-    public TagServiceImpl(TagRepository tagRepository) {
-        this.tagRepository = tagRepository;
-    }
 
     @Override
     public String createTag(Tag tag) {
+        if (tagRepository == null) {
+            return "Tag repository not initialized";
+        }
+
         if (tagRepository.existsById(tag.getGroupAndElement())) {
             return "Tag already exists";
         }
