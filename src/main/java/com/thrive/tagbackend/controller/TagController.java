@@ -1,37 +1,42 @@
 package com.thrive.tagbackend.controller;
 
-import com.thrive.tagbackend.TagUtils;
 import com.thrive.tagbackend.model.Tag;
+import com.thrive.tagbackend.service.TagService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/tag")
 public class TagController {
-    private Tag tag;
+    private final TagService tagService;
+
+    public TagController(TagService tagService) {
+        this.tagService = tagService;
+    }
 
     @GetMapping("/{group}/{element}")
-    public Tag getTag(@PathVariable int group, @PathVariable int element) {
-        String groupAndElement = TagUtils.getGroupAndElement(group, element);
-        return tag;
+    public Tag getTag(@PathVariable("group") int group, @PathVariable("element") int element) {
+        return tagService.getTag(group, element);
+    }
+
+    @GetMapping()
+    public List<Tag> getAllTags() {
+        return tagService.getAllTags();
     }
 
     @PostMapping()
     public String createTag(@RequestBody Tag tag) {
-        this.tag = tag;
-        return "Tag created successfully!";
+        return tagService.createTag(tag);
     }
 
     @PutMapping()
     public String updateTag(@RequestBody Tag tag) {
-        this.tag = tag;
-        return "Tag updated successfully!";
+        return tagService.updateTag(tag);
     }
 
     @DeleteMapping("/{group}/{element}")
-    public String deleteTag(@PathVariable int group, @PathVariable int element) {
-        String groupAndElement = TagUtils.getGroupAndElement(group, element);
-
-        this.tag = null;
-        return "Tag deleted successfully!";
+    public String deleteTag(@PathVariable("group") int group, @PathVariable("element") int element) {
+        return tagService.deleteTag(group, element);
     }
 }
