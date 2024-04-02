@@ -1,5 +1,6 @@
 package com.thrive.tagbackend.controller;
 
+import com.thrive.tagbackend.TagUtils;
 import com.thrive.tagbackend.model.Tag;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ public class TagAPIService {
 
     @GetMapping("/{group}/{element}")
     public Tag getTag(@PathVariable int group, @PathVariable int element) {
+        String groupAndElement = TagUtils.getGroupAndElement(group, element);
         return tag;
     }
 
@@ -27,6 +29,8 @@ public class TagAPIService {
 
     @DeleteMapping("/{group}/{element}")
     public String deleteTag(@PathVariable int group, @PathVariable int element) {
+        String groupAndElement = TagUtils.getGroupAndElement(group, element);
+
         this.tag = null;
         return "Tag deleted successfully!";
     }
