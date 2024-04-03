@@ -5,7 +5,7 @@ spring:
 
 # Database Settings
   datasource:
-    url: jdbc:mysql://localhost:3306/tag?useSSL=false
+    url: jdbc:mysql://localhost:3306/tag?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: password
 
