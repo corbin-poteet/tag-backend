@@ -12,9 +12,9 @@ import java.util.Objects;
 
 @Service
 public class TagServiceImpl implements TagService {
+
     @Autowired(required = false)
     private TagRepository tagRepository;
-
 
     @Override
     public String createTag(Tag tag) {
@@ -82,6 +82,12 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<Tag> getAllTags() {
         return tagRepository.findAll();
+    }
+
+    @Override
+    public String deleteAllTags() {
+        tagRepository.deleteAll();
+        return "Success";
     }
 
 }

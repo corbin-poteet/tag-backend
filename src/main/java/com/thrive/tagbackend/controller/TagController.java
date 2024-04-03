@@ -8,7 +8,7 @@ import java.util.List;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/tag")
+@RequestMapping("/api/v1/tags")
 public class TagController {
     private final TagService tagService;
 
@@ -39,5 +39,10 @@ public class TagController {
     @DeleteMapping("/{group}/{element}")
     public String deleteTag(@PathVariable("group") int group, @PathVariable("element") int element) {
         return tagService.deleteTag(group, element);
+    }
+
+    @DeleteMapping()
+    public String deleteAllTags() {
+        return tagService.deleteAllTags();
     }
 }

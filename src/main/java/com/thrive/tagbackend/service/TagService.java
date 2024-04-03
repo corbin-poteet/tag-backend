@@ -10,4 +10,5 @@ public interface TagService {
     public Tag getTag(String groupAndElement);
     public Tag getTag(int group, int element);
     public List<Tag> getAllTags();
+    public String deleteAllTags();
 }
