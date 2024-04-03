@@ -10,7 +10,7 @@ A simple CRUD back end web application created for challenge #1 of Thrive Pet He
 - JPA/Hibernate
 - MySQL
 
-## Instructions
+## Setup
 
 1. Clone the repository
 2. Open the project in your IDE
