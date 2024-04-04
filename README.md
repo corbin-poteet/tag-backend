@@ -19,7 +19,7 @@ A simple CRUD back end web application created for challenge #1 of Thrive Pet He
        - Hostname: `127.0.0.1` or `localhost`
        - Port: `3306`
        - Username: `root`
-       - Password: ``
+       - Password: `password`
 4. Run the project
 5. Use Postman or any other API testing tool to test the endpoints
 
