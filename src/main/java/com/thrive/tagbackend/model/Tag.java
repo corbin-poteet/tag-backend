@@ -9,6 +9,9 @@ import jakarta.persistence.Table;
 public class Tag {
     @Id
     private String groupAndElement; // group + ", " + element, both in hex
+    private String studyId;
+    private String seriesId;
+    private String instanceId;
     private String tagDescription;
     private String valueRepresentation;
     private String tagLength;
@@ -38,74 +41,98 @@ public class Tag {
         return groupAndElement;
     }
 
-    public void setGroupAndElement(String groupAndElement) {
-        this.groupAndElement = groupAndElement;
+    public String getStudyId() {
+        return studyId;
+    }
+
+    public String getSeriesId() {
+        return seriesId;
+    }
+
+    public String getInstanceId() {
+        return instanceId;
     }
 
     public String getTagDescription() {
         return tagDescription;
     }
 
-    public void setTagDescription(String tagDescription) {
-        this.tagDescription = tagDescription;
-    }
-
     public String getValueRepresentation() {
         return valueRepresentation;
-    }
-
-    public void setValueRepresentation(String valueRepresentation) {
-        this.valueRepresentation = valueRepresentation;
     }
 
     public String getTagLength() {
         return tagLength;
     }
 
-    public void setTagLength(String tagLength) {
-        this.tagLength = tagLength;
-    }
-
     public String getTagMultiplicity() {
         return tagMultiplicity;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="Setters">
-    public void setTagMultiplicity(String tagMultiplicity) {
-        this.tagMultiplicity = tagMultiplicity;
     }
 
     public String getValue() {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     public int getGroup() {
         return group;
-    }
-
-    public void setGroup(int group) {
-        this.group = group;
     }
 
     public int getElement() {
         return element;
     }
 
-    public void setElement(int element) {
-        this.element = element;
-    }
-
     public boolean isEditable() {
         return editable;
+    }
+//</editor-fold>
+
+    //<editor-fold desc="Setters">
+    public void setGroupAndElement(String groupAndElement) {
+        this.groupAndElement = groupAndElement;
+    }
+
+    public void setStudyId(String studyId) {
+        this.studyId = studyId;
+    }
+
+    public void setSeriesId(String seriesId) {
+        this.seriesId = seriesId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public void setTagDescription(String tagDescription) {
+        this.tagDescription = tagDescription;
+    }
+
+    public void setValueRepresentation(String valueRepresentation) {
+        this.valueRepresentation = valueRepresentation;
+    }
+
+    public void setTagLength(String tagLength) {
+        this.tagLength = tagLength;
+    }
+
+    public void setTagMultiplicity(String tagMultiplicity) {
+        this.tagMultiplicity = tagMultiplicity;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
+    }
+
+    public void setElement(int element) {
+        this.element = element;
     }
 
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-    //</editor-fold>
+//</editor-fold>
 }
