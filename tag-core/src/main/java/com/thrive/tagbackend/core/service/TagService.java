@@ -1,6 +1,6 @@
-package com.thrive.tagbackend.service;
+package com.thrive.tagbackend.core.service;
 
-import com.thrive.tagbackend.model.Tag;
+import com.thrive.tagbackend.core.model.Tag;
 
 import java.util.List;
 public interface TagService {

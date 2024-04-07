@@ -1,9 +1,9 @@
-package com.thrive.tagbackend.service.impl;
+package com.thrive.tagbackend.core.service.impl;
 
-import com.thrive.tagbackend.TagUtils;
-import com.thrive.tagbackend.model.Tag;
-import com.thrive.tagbackend.repository.TagRepository;
-import com.thrive.tagbackend.service.TagService;
+import com.thrive.tagbackend.core.TagUtils;
+import com.thrive.tagbackend.core.model.Tag;
+import com.thrive.tagbackend.core.repository.TagRepository;
+import com.thrive.tagbackend.core.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

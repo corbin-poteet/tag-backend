@@ -1,4 +1,4 @@
-package com.thrive.tagbackend;
+package com.thrive.tagbackend.core;
 
 public class TagUtils {
     public static String getGroupAndElement(int group, int element) {

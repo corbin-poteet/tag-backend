@@ -1,4 +1,4 @@
-package com.thrive.tagbackend.model;
+package com.thrive.tagbackend.core.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

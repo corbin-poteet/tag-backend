@@ -1,4 +1,4 @@
-package org.example;
+package com.thrive.tagbackend.deletion;
 
 public class Main {
     public static void main(String[] args) {
