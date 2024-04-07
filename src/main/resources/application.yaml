@@ -5,9 +5,9 @@ spring:
 
 # Database Settings
   datasource:
-    url: jdbc:mysql://localhost:3306/tag?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3333/tag?allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: password
+    password: root
 
 # JPA Settings
   jpa:
