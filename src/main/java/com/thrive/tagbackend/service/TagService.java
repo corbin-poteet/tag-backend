@@ -1,6 +1,7 @@
 package com.thrive.tagbackend.service;
 
 import com.thrive.tagbackend.model.Tag;
+
 import java.util.List;
 public interface TagService {
     public String createTag(Tag tag);
