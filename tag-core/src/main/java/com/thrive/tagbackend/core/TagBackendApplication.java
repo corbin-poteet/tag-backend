@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.swing.*;
 
+import static com.thrive.inmemory.Main.initializeRedisConnection;
+
 @SpringBootApplication()
 public class TagBackendApplication {
 
@@ -20,6 +22,8 @@ public class TagBackendApplication {
 		frame.getContentPane().add(label);
 
 		frame.setVisible(true);
+
+		initializeRedisConnection();
 
 		SpringApplication.run(TagBackendApplication.class, args);
 	}

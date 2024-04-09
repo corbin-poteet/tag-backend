@@ -20,7 +20,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    implementation files('../tag-inmemory/build/libs/tag-inmemory-0.0.1-SNAPSHOT.jar')
+    //implementation files('../tag-inmemory/build/libs/tag-inmemory-1.0-SNAPSHOT.jar')
+    implementation project(':tag-inmemory')
 
     runtimeOnly 'com.mysql:mysql-connector-j'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

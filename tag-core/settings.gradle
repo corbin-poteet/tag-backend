@@ -1,1 +1,3 @@
 rootProject.name = 'tag-backend'
+include 'tag-inmemory'
+project(':tag-inmemory').projectDir = new File('../tag-inmemory')
