@@ -31,8 +31,9 @@ public class Main {
                 asyncCommands.hset("user-session:123", hash).get();
 
                 System.out.println(asyncCommands.hgetall("user-session:123").get());
-                return true;
                 // Prints: {name=John, surname=Smith, company=Redis, age=29}
+
+                return true;
             } catch (ExecutionException | InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
