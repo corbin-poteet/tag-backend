@@ -20,7 +20,7 @@ public class TagServiceImpl implements TagService {
     public String createTag(Tag tag) {
         // Set groupAndElement if not set
         if (tag.getGroupAndElement() == null) {
-            tag.setGroupAndElement(TagUtils.getGroupAndElement(tag.getGroup(), tag.getElement()));
+            tag.setGroupAndElement(TagUtils.toGroupAndElement(tag.getGroup(), tag.getElement()));
         }
 
         // Check if tag already exists
@@ -29,7 +29,7 @@ public class TagServiceImpl implements TagService {
         }
 
         // Check if groupAndElement matches group and element
-        if (!Objects.equals(tag.getGroupAndElement(), TagUtils.getGroupAndElement(tag.getGroup(), tag.getElement()))) {
+        if (!Objects.equals(tag.getGroupAndElement(), TagUtils.toGroupAndElement(tag.getGroup(), tag.getElement()))) {
             return "Group and element do not match";
         }
 
@@ -44,7 +44,7 @@ public class TagServiceImpl implements TagService {
         }
 
         // Check if groupAndElement matches group and element
-        if (!Objects.equals(tag.getGroupAndElement(), TagUtils.getGroupAndElement(tag.getGroup(), tag.getElement()))) {
+        if (!Objects.equals(tag.getGroupAndElement(), TagUtils.toGroupAndElement(tag.getGroup(), tag.getElement()))) {
             return "Group and element do not match";
         }
 
@@ -64,7 +64,7 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public String deleteTag(int group, int element) {
-        String groupAndElement = TagUtils.getGroupAndElement(group, element);
+        String groupAndElement = TagUtils.toGroupAndElement(group, element);
         return deleteTag(groupAndElement);
     }
 
@@ -75,7 +75,7 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public Tag getTag(int group, int element) {
-        String groupAndElement = TagUtils.getGroupAndElement(group, element);
+        String groupAndElement = TagUtils.toGroupAndElement(group, element);
         return getTag(groupAndElement);
     }
 
