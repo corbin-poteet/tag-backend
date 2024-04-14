@@ -1,3 +1,5 @@
 rootProject.name = 'tag-backend'
-include 'tag-inmemory'
+include 'tag-inmemory', 'tag-compositing', 'tag-deletion'
 project(':tag-inmemory').projectDir = new File('../tag-inmemory')
+project(':tag-compositing').projectDir = new File('../tag-compositing')
+project(':tag-deletion').projectDir = new File('../tag-deletion')

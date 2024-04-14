@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Full Start" type="CompoundRunConfigurationType">
+    <toRun name="CompositingService" type="Application" />
+    <toRun name="DeletionService" type="Application" />
+    <toRun name="TagBackendApplication" type="SpringBootApplicationConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>

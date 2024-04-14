@@ -1,6 +1,6 @@
 package com.thrive.tagbackend.core.service.impl;
 
-import com.thrive.tagbackend.core.TagUtils;
+import com.thrive.tagbackend.core.util.TagUtils;
 import com.thrive.tagbackend.core.model.Tag;
 import com.thrive.tagbackend.core.repository.TagRepository;
 import com.thrive.tagbackend.core.service.TagService;

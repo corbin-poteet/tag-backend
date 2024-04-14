@@ -1,0 +1,4 @@
+io:
+  nats:
+    client:
+      servers: nats://localhost:4222

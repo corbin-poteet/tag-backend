@@ -1,4 +1,4 @@
-package com.thrive.tagbackend.core;
+package com.thrive.tagbackend.core.util;
 
 import com.thrive.tagbackend.core.model.Tag;
 

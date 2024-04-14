@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/tag-compositing" />
+    <file type="web" url="file://$PROJECT_DIR$/tag-composition" />
     <file type="web" url="file://$PROJECT_DIR$/tag-core" />
     <file type="web" url="file://$PROJECT_DIR$/tag-deletion" />
     <file type="web" url="file://$PROJECT_DIR$/tag-inmemory" />

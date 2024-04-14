@@ -17,7 +17,9 @@
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/tag-compositing" />
             <option value="$PROJECT_DIR$/tag-core" />
+            <option value="$PROJECT_DIR$/tag-deletion" />
             <option value="$PROJECT_DIR$/tag-inmemory" />
           </set>
         </option>

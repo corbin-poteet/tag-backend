@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.util.HashMap;
+
 @Entity
 @Table(name = "tag_info")
 public class Tag {
@@ -20,6 +22,41 @@ public class Tag {
     private int group;
     private int element;
     private boolean editable;
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "groupAndElement='" + groupAndElement + '\'' +
+                ", studyId='" + studyId + '\'' +
+                ", seriesId='" + seriesId + '\'' +
+                ", instanceId='" + instanceId + '\'' +
+                ", tagDescription='" + tagDescription + '\'' +
+                ", valueRepresentation='" + valueRepresentation + '\'' +
+                ", tagLength='" + tagLength + '\'' +
+                ", tagMultiplicity='" + tagMultiplicity + '\'' +
+                ", value='" + value + '\'' +
+                ", group=" + group +
+                ", element=" + element +
+                ", editable=" + editable +
+                '}';
+    }
+
+    public HashMap<String, String> toHashMap() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("groupAndElement", groupAndElement);
+        map.put("studyId", studyId);
+        map.put("seriesId", seriesId);
+        map.put("instanceId", instanceId);
+        map.put("tagDescription", tagDescription);
+        map.put("valueRepresentation", valueRepresentation);
+        map.put("tagLength", tagLength);
+        map.put("tagMultiplicity", tagMultiplicity);
+        map.put("value", value);
+        map.put("group", String.valueOf(group));
+        map.put("element", String.valueOf(element));
+        map.put("editable", String.valueOf(editable));
+        return map;
+    }
 
     public Tag() {
     }
