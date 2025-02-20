@@ -1,6 +1,6 @@
 # Tag CRUD System Backend
 
-A simple CRUD back end web application created for challenge #1 of Thrive Pet Healthcare's interview project. Includes full CRUD functionality for tags.
+A simple CRUD backend for the [tag-fullstack](https://github.com/corbin-poteet/tag-fullstack) web application. Includes full CRUD functionality for tags.
 
 ### Tech stack:
 - Java
